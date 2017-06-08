@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <iostream>
 #include <string>
+#include <algorithm>
 #include <vector>
 #include <unordered_set>
 
@@ -21,7 +22,26 @@ int main() {
 	        cin>>temp;
 	        firstArray.push_back(temp);
 	    }
+	    sort(firstArray.begin(), firstArray.end());
 	    for (int j = 0; j < m; j++) {
 	        int temp;
 	        cin>>temp;
 	        complement.insert(temp);
+	    }
+	    for (int j = 0; j < n; j++) {
+	        if (complement.find(x - firstArray[j]) != complement.end()) {
+	            output += to_string(firstArray[j]) + " "; 
+	            output += to_string(x - firstArray[j]) + ", "; 
+	        }
+	    }
+	    if ( output.size() != 0) {
+	        output.erase(output.size()-1); 
+	        output.erase(output.size()-1); 
+    	    cout << output << endl;
+	    }
+	    else 
+	        cout << "-1" << endl;
+	}
+	
+	return 0;
+}

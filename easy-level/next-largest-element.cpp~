@@ -50,7 +50,10 @@ int main() {
 	        if (flag == false)
 	            cout << "-1" << " ";
 	    }
-	    cout << "-1" << endl;
+	    cout << -1 << endl;
+	    //for (int j = 0; j < next_big.size(); j++)
+	    //    cout << next_big[j] << " "; 
+	    //cout << endl;
 	}
 	
 	return 0;
